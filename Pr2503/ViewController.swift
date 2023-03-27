@@ -9,7 +9,7 @@ class ViewController: UIViewController {
     
     private var pass = ""
     
-    var isBlack: Bool = false {
+    var isBlack: Bool = true {
         didSet {
             if isBlack {
                 self.view.backgroundColor = .black
@@ -25,18 +25,37 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupHierarchy()
+    }
+    
+    
+    //MARK: - Setup
+    
+    private func setupHierarchy() {
+        view.backgroundColor = .black
         
-        createPassButton.setTitle("CREATE", for: .normal)
-        createPassButton.tintColor = .black
+        resultLabel.text = "000"
+        resultLabel.isHidden = true
+        
+        createPassButton.setTitle("СОЗДАТЬ ПАРОЛЬ", for: .normal)
+        createPassButton.tintColor = .white
         createPassButton.addTarget(self, action: #selector(startCreatePass), for: .touchUpInside)
         
-        textField.isSecureTextEntry = false
-        textField.textColor = .blue
+        textField.frame.size.width = 400
+        textField.isSecureTextEntry = true
+        textField.textColor = .systemGreen
+        textField.backgroundColor = UIColor.clear
+        textField.layer.borderColor = UIColor.systemGreen.cgColor
+        textField.layer.borderWidth = 1.0
         textField.text = pass
         
         indicator.isHidden = true
-        // Do any additional setup after loading the view.
+        indicator.tintColor = .systemGreen
+        indicator.color = .systemGreen
     }
+    
+    
+    //MARK: - Action
     
     func bruteForce(passwordToUnlock: String) {
         let queue = DispatchQueue.global(qos: .default)
@@ -54,7 +73,8 @@ class ViewController: UIViewController {
                     self.resultLabel.text = password
                     if password == self.pass {
                         indicator.isHidden = true
-                        textField.isSecureTextEntry = true
+                        textField.isSecureTextEntry = false
+                        resultLabel.isHidden = false
                     }
                 }
                 // Your stuff here
@@ -68,8 +88,10 @@ class ViewController: UIViewController {
     
     @objc func startCreatePass() {
         pass = generatePassword(length: 3)
+        resultLabel.isHidden = true
         indicator.isHidden = false
         indicator.startAnimating()
+        textField.isSecureTextEntry = true
         textField.text = pass
         bruteForce(passwordToUnlock: pass)
     }

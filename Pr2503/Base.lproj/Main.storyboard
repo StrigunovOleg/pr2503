@@ -18,49 +18,55 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="59" translatesAutoresizingMaskIntoConstraints="NO" id="3Ke-Mj-N3Q">
-                                <rect key="frame" x="10" y="300.5" width="394" height="295.5"/>
+                                <rect key="frame" x="10" y="340" width="394" height="216.5"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="CHM-Rw-NwD">
-                                        <rect key="frame" x="162.5" y="0.0" width="69.5" height="20"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b6O-cX-v0H">
-                                                <rect key="frame" x="0.0" y="0.0" width="41.5" height="20"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="av0-MJ-q3K">
-                                                <rect key="frame" x="49.5" y="0.0" width="20" height="20"/>
-                                            </activityIndicatorView>
-                                        </subviews>
-                                    </stackView>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w5n-5g-LN2">
-                                        <rect key="frame" x="181" y="79" width="32" height="34"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="hello" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w5n-5g-LN2">
+                                        <rect key="frame" x="167.5" y="0.0" width="59" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JGd-C3-bgi">
-                                        <rect key="frame" x="159.5" y="172" width="75" height="34.5"/>
+                                        <rect key="frame" x="159.5" y="93" width="75" height="34.5"/>
+                                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3g4-cd-RKK">
-                                        <rect key="frame" x="174" y="265.5" width="46" height="30"/>
-                                        <state key="normal" title="Button"/>
+                                        <rect key="frame" x="140.5" y="186.5" width="113" height="30"/>
+                                        <color key="tintColor" systemColor="systemGreenColor"/>
+                                        <state key="normal" title="СМЕНИТЬ ФОН">
+                                            <color key="titleColor" systemColor="systemGreenColor"/>
+                                        </state>
                                         <connections>
                                             <action selector="onBut:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XD4-sb-XPE"/>
                                         </connections>
                                     </button>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b6O-cX-v0H">
+                                <rect key="frame" x="10" y="290.5" width="394" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemGreenColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="av0-MJ-q3K">
+                                <rect key="frame" x="10" y="291" width="394" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="av0-MJ-q3K" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="2rF-Ci-ZUn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="av0-MJ-q3K" secondAttribute="trailing" constant="10" id="4zl-Xo-ggS"/>
                             <constraint firstItem="3Ke-Mj-N3Q" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="6cr-ED-n1t"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3Ke-Mj-N3Q" secondAttribute="trailing" constant="10" id="7gA-Ks-ewy"/>
+                            <constraint firstItem="b6O-cX-v0H" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="N4t-CA-DlD"/>
+                            <constraint firstItem="3Ke-Mj-N3Q" firstAttribute="top" secondItem="b6O-cX-v0H" secondAttribute="bottom" constant="29" id="W2x-kW-NU7"/>
                             <constraint firstItem="3Ke-Mj-N3Q" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="hNH-Mt-rPd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="b6O-cX-v0H" secondAttribute="trailing" constant="10" id="qAe-ST-DYf"/>
                             <constraint firstItem="3Ke-Mj-N3Q" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tfS-Lr-2PL"/>
+                            <constraint firstItem="3Ke-Mj-N3Q" firstAttribute="top" secondItem="av0-MJ-q3K" secondAttribute="bottom" constant="29" id="vNe-p5-kdu"/>
                         </constraints>
                     </view>
                     <connections>
@@ -79,6 +85,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
